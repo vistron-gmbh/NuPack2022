@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Nupack2022Vsix")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A port of CnSharps NuPack to VS2022")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Vistron GmbH")]
 [assembly: AssemblyProduct("Nupack2022Vsix")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("GPL-3.0 License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
