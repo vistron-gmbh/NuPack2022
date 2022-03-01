@@ -1,6 +1,6 @@
 ﻿# Nupack2022
 
-This is a port of the [Nupack2017 ]([GitHub - cnsharp/nupack: Visual Studio extension to build/deploy NuGet package](https://github.com/cnsharp/nupack)) for VS2022.
+This is a port of the [Nupack2017](https://github.com/cnsharp/nupack) for VS2022.
 
 # Changes done to run NuPack on VS2022
 
