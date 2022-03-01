@@ -2,6 +2,8 @@
 
 This is a port of the [Nupack2017](https://github.com/cnsharp/nupack) for VS2022.
 
+Contact at: repos.blattner@vistron.de
+
 # Changes done to run NuPack on VS2022
 
 ## Port
