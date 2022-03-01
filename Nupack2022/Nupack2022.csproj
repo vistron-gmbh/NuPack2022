@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{960F76DD-04F7-4848-8F78-7FD71E2921E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nupack2022</RootNamespace>
+    <AssemblyName>Nupack2022</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfoEditor\AssemblyInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfoEditor\AssemblyInfoForm.Designer.cs">
+      <DependentUpon>AssemblyInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="Extensions\ServiceProviderExtensions.cs" />
+    <Compile Include="Extensions\SolutionDataCache.cs" />
+    <Compile Include="Packaging\ConfigHelper.cs" />
+    <Compile Include="Packaging\DependencyViewModel.cs" />
+    <Compile Include="Packaging\DeployWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Packaging\DeployWizard.Designer.cs">
+      <DependentUpon>DeployWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.Designer.cs" />
+    <Compile Include="VSSharp.Tfs\TfsSourceControl.cs" />
+    <Compile Include="VSSharp.Updated\Extensions\AssemblyInfoUtil.cs" />
+    <Compile Include="VSSharp.Updated\Extensions\DocumentExtensions.cs" />
+    <Compile Include="VSSharp.Updated\Extensions\DteExtensions.cs" />
+    <Compile Include="VSSharp.Updated\Extensions\NuGetExtensions.cs" />
+    <Compile Include="VSSharp.Updated\Extensions\ProjectExtensions.cs" />
+    <Compile Include="VSSharp.Updated\Extensions\SolutionExtensions.cs" />
+    <Compile Include="Packaging\MsbuildDeployWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Packaging\MsbuildDeployWizard.Designer.cs">
+      <DependentUpon>MsbuildDeployWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Packaging\NuGetDeployControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Packaging\NuGetDeployControl.Designer.cs">
+      <DependentUpon>NuGetDeployControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Packaging\NuSpecHelper.cs" />
+    <Compile Include="Packaging\Package.cs" />
+    <Compile Include="Packaging\PackageMetadataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Packaging\PackageMetadataControl.Designer.cs">
+      <DependentUpon>PackageMetadataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Packaging\PackagesConfigReader.cs" />
+    <Compile Include="Packaging\SourceCache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoadingForm.designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CmdUtil.cs" />
+    <Compile Include="Util\DirectoryBuildUtil.cs" />
+    <Compile Include="Util\VersionUtil.cs" />
+    <Compile Include="Util\XmlSerializationHelper.cs" />
+    <Compile Include="Util\XmlTextFormatter.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandActionType.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandBarAccessor.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandButton.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandConfig.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandControl.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandManager.cs" />
+    <Compile Include="VSSharp.Updated\Commands\CommandMenu.cs" />
+    <Compile Include="VSSharp.Updated\Commands\ControlUnavailableState.cs" />
+    <Compile Include="VSSharp.Updated\Commands\DependentItems.cs" />
+    <Compile Include="VSSharp.Updated\Commands\ICommand.cs" />
+    <Compile Include="VSSharp.Updated\Commands\ICommandBarAccessor.cs" />
+    <Compile Include="VSSharp.Updated\Commands\ICommandMenuGenerator.cs" />
+    <Compile Include="VSSharp.Updated\Host.cs" />
+    <Compile Include="VSSharp.Updated\Plugin.cs" />
+    <Compile Include="VSSharp.Updated\Projects\CommonAssemblyInfo.cs" />
+    <Compile Include="VSSharp.Updated\Projects\IPackageCommonMetadata.cs" />
+    <Compile Include="VSSharp.Updated\Projects\PackageProjectProperties.cs" />
+    <Compile Include="VSSharp.Updated\Projects\ProjectAssemblyInfo.cs" />
+    <Compile Include="VSSharp.Updated\Resources\ImageConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VSSharp.Updated\Resources\ResourceHelper.cs" />
+    <Compile Include="VSSharp.Updated\SourceControl\ISourceControl.cs" />
+    <Compile Include="VSSharp.Updated\SourceControl\SourceControlManager.cs" />
+    <Compile Include="VSSharp.Updated\Util\XmlSerializationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AeroWizard">
+      <Version>2.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TeamFoundation.VersionControl.All">
+      <Version>12.0.30723.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TeamFoundationServer.Client">
+      <Version>16.170.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TeamFoundationServer.ExtendedClient">
+      <Version>16.170.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.SDK">
+      <Version>17.1.32210.191</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.1.4054" />
+    <PackageReference Include="NuGet.Core">
+      <Version>2.14.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssemblyInfoEditor\AssemblyInfoForm.resx">
+      <DependentUpon>AssemblyInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Packaging\DeployWizard.resx">
+      <DependentUpon>DeployWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Packaging\MsbuildDeployWizard.resx">
+      <DependentUpon>MsbuildDeployWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Packaging\NuGetDeployControl.resx">
+      <DependentUpon>NuGetDeployControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Packaging\PackageMetadataControl.resx">
+      <DependentUpon>PackageMetadataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="doc\add_nuspec.png" />
+    <Content Include="doc\assembly_info_one_by_one.PNG" />
+    <Content Include="doc\context_menu.png" />
+    <Content Include="doc\nuget_deploy.PNG" />
+    <Content Include="doc\unified_assembly_info.PNG" />
+    <Content Include="icons\logo.ico" />
+    <Content Include="icons\nuget.ico" />
+    <Content Include="icons\zip.ico" />
+    <Content Include="lib\CnSharp.Common.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.Client.dll" />
+    <Content Include="lib\Microsoft.TeamFoundation.VersionControl.Client.dll" />
+    <Content Include="Resources\AddNuSpecCommand.png" />
+    <Content Include="Resources\AddNuSpecCommandPackage.ico" />
+    <Content Include="Resources\AssemblyInfoEditCommand.png" />
+    <Content Include="Resources\attribute.png" />
+    <Content Include="Resources\close32.png" />
+    <Content Include="Resources\exchange.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\loading32.gif" />
+    <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\nuget.ico" />
+    <Content Include="Resources\NuGetDeployCommand.png" />
+    <Content Include="Resources\reload32.png" />
+    <Content Include="Resources\UnifiedAssemblyInfoEditCommand.png" />
+    <Content Include="Resources\zip.ico" />
+    <Content Include="stylesheet.css" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

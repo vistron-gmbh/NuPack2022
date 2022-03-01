@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nupack2022", "Nupack2022\Nupack2022.csproj", "{960F76DD-04F7-4848-8F78-7FD71E2921E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nupack2022Vsix", "Nupack2022Vsix\Nupack2022Vsix.csproj", "{8CE4E67F-696E-44AA-9BC0-9133DFA30598}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Debug|x86.ActiveCfg = Debug|x86
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Debug|x86.Build.0 = Debug|x86
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Release|x86.ActiveCfg = Release|x86
+		{960F76DD-04F7-4848-8F78-7FD71E2921E1}.Release|x86.Build.0 = Release|x86
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Debug|x86.ActiveCfg = Debug|x86
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Debug|x86.Build.0 = Debug|x86
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Release|x86.ActiveCfg = Release|x86
+		{8CE4E67F-696E-44AA-9BC0-9133DFA30598}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3600196-B75E-4477-8F2E-AC8EFFF2FB08}
+	EndGlobalSection
+EndGlobal
