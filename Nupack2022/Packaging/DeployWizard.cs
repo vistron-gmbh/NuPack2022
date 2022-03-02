@@ -323,8 +323,11 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                     script.AppendLine();
                 }
 
-                script.AppendFormat("\"{0}\" add \"{1}{4}.{5}.nupkg\" -source \"{2}\"", nugetExe,_outputDir, deployVM.NuGetServer, deployVM.ApiKey,
-                    _metadata.Id,_metadata.Version);
+                string subCommand = deployVM.TargetIsFileserver ? "add" : "push"; //We normally use nuget push. If target is FileServer we use nuget add
+
+                script.AppendFormat("\"{0}\" {6} \"{1}{4}.{5}.nupkg\" -source \"{2}\" \"{3}\"", nugetExe, _outputDir, deployVM.NuGetServer, deployVM.ApiKey,
+                    _metadata.Id, _metadata.Version, subCommand);
+
             }
 
             if (chkSymbol.Checked && !string.IsNullOrWhiteSpace(deployVM.SymbolServer))
