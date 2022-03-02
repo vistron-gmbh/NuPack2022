@@ -18,6 +18,17 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 if (!string.IsNullOrWhiteSpace(textBoxSymbolServer.Text))
                     textBoxSymbolServer.Enabled = true;
             };
+
+            sourceBox.SelectedValueChanged += SourceBox_SelectedValueChanged;
+        }
+
+        private void SourceBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (sourceBox.SelectedItem is string url)
+            {
+                var match = _nuGetConfig.Sources.FirstOrDefault(x => x.Url == url);
+                _viewModel.TargetIsFileserver = match.IsFileServer;
+            }          
         }
 
         public NuGetConfig NuGetConfig
@@ -30,8 +41,9 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 sourceBox.Items.Clear();
                 foreach (var source in _nuGetConfig.Sources)
                 {
-                    sourceBox.Items.Add(source.Url);
-                }
+                    sourceBox.Items.Add(source.Url);             
+                                   }
+                sourceBox.SelectedIndex = 0;
             }
         }
 

@@ -110,13 +110,13 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
             {
                 _deployControl.Focus();
                 if (_deployControl.NuGetConfig == null)
-                {
-                    _deployControl.NuGetConfig = _nuGetConfig;
+                {                  
                     var deployVM = new NuGetDeployViewModel
                     {
                         SymbolServer = chkSymbol.Checked ? Common.SymbolServer : null
                     };
                     _deployControl.ViewModel = deployVM;
+                    _deployControl.NuGetConfig = _nuGetConfig;
                 }
             }
         }
@@ -330,11 +330,15 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                     script.AppendLine();
                 }
 
-                string subCommand = deployVM.TargetIsFileserver ? "add" : "push"; //We normally use nuget push. If target is FileServer we use nuget add
+                bool targetIsFileserver = deployVM.TargetIsFileserver;
+                string subCommand = targetIsFileserver ? "add" : "push"; //We normally use nuget push. If target is FileServer we use nuget add
+                string apiKey = targetIsFileserver ? string.Empty : deployVM.ApiKey;
 
-                script.AppendFormat("\"{0}\" {6} \"{1}{4}.{5}.nupkg\" -source \"{2}\" \"{3}\"", nugetExe, _outputDir, deployVM.NuGetServer, deployVM.ApiKey,
+                script.AppendFormat("\"{0}\" {6} \"{1}{4}.{5}.nupkg\" -source \"{2}\"", nugetExe, _outputDir, deployVM.NuGetServer, apiKey,
                     _metadata.Id, _metadata.Version, subCommand);
-  
+
+                if (!targetIsFileserver)                
+                    script.AppendFormat(" \"{0}\"", apiKey);                 
             }
 
             if (chkSymbol.Checked && !string.IsNullOrWhiteSpace(deployVM.SymbolServer))
@@ -427,7 +431,8 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 {
                     Url = deployVM.NuGetServer,
                     ApiKey = deployVM.RememberKey ? deployVM.ApiKey : null,
-                    UserName = deployVM.V2Login
+                    UserName = deployVM.V2Login,
+                    IsFileServer = deployVM.TargetIsFileserver
                 });
             }
             _nuGetConfig.Save();

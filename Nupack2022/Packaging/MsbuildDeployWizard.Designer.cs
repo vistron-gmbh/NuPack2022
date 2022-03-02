@@ -71,7 +71,6 @@
             // 
             this.btnOpenOutputDir.FlatAppearance.BorderSize = 0;
             this.btnOpenOutputDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenOutputDir.Image = global::CnSharp.VisualStudio.NuPack.Resource.folder;
             this.btnOpenOutputDir.Location = new System.Drawing.Point(707, 98);
             this.btnOpenOutputDir.Name = "btnOpenOutputDir";
             this.btnOpenOutputDir.Size = new System.Drawing.Size(23, 25);
@@ -99,7 +98,6 @@
             // 
             this.btnOpenNuGetExe.FlatAppearance.BorderSize = 0;
             this.btnOpenNuGetExe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenNuGetExe.Image = global::CnSharp.VisualStudio.NuPack.Resource.folder;
             this.btnOpenNuGetExe.Location = new System.Drawing.Point(707, 20);
             this.btnOpenNuGetExe.Name = "btnOpenNuGetExe";
             this.btnOpenNuGetExe.Size = new System.Drawing.Size(23, 25);
@@ -125,9 +123,6 @@
             // 
             // stepWizardControl
             // 
-            this.stepWizardControl.BackColor = System.Drawing.Color.White;
-            this.stepWizardControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stepWizardControl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stepWizardControl.Location = new System.Drawing.Point(0, 0);
             this.stepWizardControl.Name = "stepWizardControl";
             this.stepWizardControl.Pages.Add(this.wizardPageMetadata);
@@ -136,7 +131,6 @@
             this.stepWizardControl.Size = new System.Drawing.Size(1088, 500);
             this.stepWizardControl.StepListFont = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.stepWizardControl.TabIndex = 27;
-            this.stepWizardControl.Text = "Pack & Deploy";
             this.stepWizardControl.Title = "Pack & Deploy";
             this.stepWizardControl.TitleIcon = ((System.Drawing.Icon)(resources.GetObject("stepWizardControl.TitleIcon")));
             // 

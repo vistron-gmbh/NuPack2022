@@ -63,6 +63,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
         public string Url { get; set; }
         public string ApiKey { get; set; }
         public string UserName { get; set; }
+        public bool IsFileServer { get; set; }
     }
 
     public class NuGetConfig
