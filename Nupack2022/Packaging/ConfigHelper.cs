@@ -75,6 +75,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
         public string NugetPath { get; set; }
         public List<NuGetSource> Sources { get; set; }
         public const string FileName = "nuget.nupack.config";
+        public string LastTarget { get; set; }
 
         public void AddOrUpdateSource(NuGetSource source)
         {

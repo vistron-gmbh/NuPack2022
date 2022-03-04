@@ -73,6 +73,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
             };
         }
 
+
         public MsbuildDeployWizard(ManifestMetadata metadata, PackageProjectProperties ppp, DirectoryBuildProps directoryBuildProps) : this()
         {
             _metadata = metadata;
@@ -356,7 +357,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
 
 
         private void ShowPackages()
-        {
+        {    
             var outputDir = new DirectoryInfo(_outputDir);
             if (!outputDir.Exists)
                 return;
@@ -435,6 +436,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                     IsFileServer = deployVM.TargetIsFileserver
                 });
             }
+            _nuGetConfig.LastTarget = deployVM.NuGetServer;
             _nuGetConfig.Save();
         }
 
