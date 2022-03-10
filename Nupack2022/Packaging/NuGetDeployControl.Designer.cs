@@ -138,7 +138,7 @@
             this.fileserverCheckBox.Name = "fileServerCheckBox";
             this.fileserverCheckBox.Size = new System.Drawing.Size(120, 17);
             this.fileserverCheckBox.TabIndex = 40;
-            this.fileserverCheckBox.Text = "Target is simple Fileserver";
+            this.fileserverCheckBox.Text = "Target is a local path or a UNC share path";
             this.fileserverCheckBox.UseVisualStyleBackColor = true;
             //this.fileserverCheckBox.CheckedChanged += new System.EventHandler(this.fileserverCheckbox_CheckedChanged); //I think this is done through binding which we set manually
             // 
