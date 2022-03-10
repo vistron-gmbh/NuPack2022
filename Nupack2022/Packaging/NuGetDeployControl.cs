@@ -18,6 +18,18 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 if (!string.IsNullOrWhiteSpace(textBoxSymbolServer.Text))
                     textBoxSymbolServer.Enabled = true;
             };
+
+            sourceBox.SelectedValueChanged += SourceBox_SelectedValueChanged;
+        }
+
+        private void SourceBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (sourceBox.SelectedItem is string url)
+            {
+                var match = _nuGetConfig.Sources.FirstOrDefault(x => x.Url == url);
+                fileserverCheckBox.Checked = match.IsFileServer;
+                _viewModel.TargetIsFileserver = match.IsFileServer;
+            }
         }
 
         public NuGetConfig NuGetConfig
@@ -28,10 +40,12 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 _nuGetConfig = value;
 
                 sourceBox.Items.Clear();
-                foreach (var source in _nuGetConfig.Sources)
-                {
-                    sourceBox.Items.Add(source.Url);
-                }
+                foreach (var source in _nuGetConfig.Sources)                
+                    sourceBox.Items.Add(source.Url);                
+
+                //We set the combobox to the last index from the previous usage
+                if (_nuGetConfig.Sources.FirstOrDefault(x => x.Url == _nuGetConfig.LastTarget) is NuGetSource lastTarget)
+                    sourceBox.SelectedIndex = _nuGetConfig.Sources.IndexOf(lastTarget);               
             }
         }
 
@@ -45,6 +59,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 _viewModel.RememberKey = chkRemember.Checked;
                 _viewModel.ApiKey = textBoxApiKey.Text;
                 _viewModel.V2Login = textBoxLogin.Text;
+                _viewModel.TargetIsFileserver = fileserverCheckBox.Checked;
                 return _viewModel;
             }
             set
@@ -66,6 +81,7 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
                 textBoxLogin.DataBindings.Clear();
                 textBoxLogin.DataBindings.Add("Text", _viewModel, "V2Login", true, DataSourceUpdateMode.OnPropertyChanged);
 
+                fileserverCheckBox.DataBindings.Add("Checked", _viewModel, "TargetIsFileserver", true, DataSourceUpdateMode.OnPropertyChanged);
             }
         }
 
@@ -87,7 +103,6 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
             textBoxLogin.Visible = check.Checked;
             labelLogin.Visible = check.Checked;
         }
-
     }
 
     public class NuGetDeployViewModel
@@ -97,5 +112,10 @@ namespace CnSharp.VisualStudio.NuPack.Packaging
         public bool RememberKey { get; set; }
         public string SymbolServer { get; set; }
         public string V2Login { get; set; }
-    } 
+        public bool TargetIsFileserver
+        {
+            get;
+            set;
+        }
+    }
 }

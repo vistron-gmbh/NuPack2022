@@ -38,6 +38,7 @@
             this.sourceBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxApiKey = new System.Windows.Forms.TextBox();
+            this.fileserverCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxSymbolServer
@@ -130,10 +131,22 @@
             this.textBoxApiKey.Size = new System.Drawing.Size(412, 20);
             this.textBoxApiKey.TabIndex = 31;
             // 
+            // checkBox1
+            // 
+            this.fileserverCheckBox.AutoSize = true;
+            this.fileserverCheckBox.Location = new System.Drawing.Point(167, 181);
+            this.fileserverCheckBox.Name = "fileServerCheckBox";
+            this.fileserverCheckBox.Size = new System.Drawing.Size(120, 17);
+            this.fileserverCheckBox.TabIndex = 40;
+            this.fileserverCheckBox.Text = "Target is a local path or a UNC share path";
+            this.fileserverCheckBox.UseVisualStyleBackColor = true;
+            //this.fileserverCheckBox.CheckedChanged += new System.EventHandler(this.fileserverCheckbox_CheckedChanged); //I think this is done through binding which we set manually
+            // 
             // NuGetDeployControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.fileserverCheckBox);
             this.Controls.Add(this.textBoxSymbolServer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labelLogin);
@@ -163,5 +176,6 @@
         private System.Windows.Forms.ComboBox sourceBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxApiKey;
+        private System.Windows.Forms.CheckBox fileserverCheckBox;
     }
 }

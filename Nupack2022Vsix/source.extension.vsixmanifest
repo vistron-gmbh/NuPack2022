@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Nupack2022Vsix.6ea62e3a-3529-470e-bff9-0c1c843cb055" Version="1.0" Language="en-US" Publisher="m.blattner" />
+        <Identity Id="Nupack2022Vsix.6ea62e3a-3529-470e-bff9-0c1c843cb055" Version="1.0.2" Language="en-US" Publisher="m.blattner" />
         <DisplayName>Nupack2022Vsix</DisplayName>
-        <Description>Empty VSIX Project.</Description>
+        <Description xml:space="preserve">This is a VS2022 port cnsharps Nupack with some additional features.</Description>
+        <MoreInfo>https://github.com/vistron-gmbh/NuPack2022</MoreInfo>
+        <ReleaseNotes>Initial Release.</ReleaseNotes>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
